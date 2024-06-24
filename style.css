@@ -34,6 +34,9 @@ nav ul li:nth-child(2){
     margin-top: 0.5em;
 }
 
+#menu_ham, #label_ham{
+    display: none;
+}
 
 nav li{
     justify-content: space-around;
@@ -55,6 +58,15 @@ nav li:nth-last-child(2){
      }
 }
 
+nav li:nth-last-child(3){
+    &:hover{
+       color: #664efc;
+    }
+}
+
+nav li button:hover{
+    color:#664efc;
+}
 #sc1{
     display: grid;
     grid-template-areas: 'text image';
@@ -294,10 +306,32 @@ img:last-of-type{
 
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
 
     nav ul{
         display: none;
+    }
+
+    #label_ham{
+        display:block;
+    }
+
+    #menu_ham:checked ~ .prueba{
+        display: block;
+        position: absolute;
+        top: 5em;
+        text-align: right;
+        left: 60%;
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 5px;
+        width: 9em;
+    }
+
+    .prueba li button{
+        width: 6em;
+        background-color: white;
+        color:black;
     }
 
     .izq_sc1{
@@ -402,4 +436,5 @@ img:last-of-type{
     footer .der_footer li:nth-of-type(4){
         grid-area: area4;
     }
+
   }
